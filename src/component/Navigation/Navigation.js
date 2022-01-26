@@ -8,7 +8,7 @@ import {
 
 const Navigation = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer className='navigation'>
         <ul>
             <StyledNavLink  to="/">
                 <li>accueil</li>
@@ -18,7 +18,7 @@ const Navigation = () => {
             </StyledNavLink>
 
             <NavPortfolio>portfolio
-                <NavProjects>
+                <NavProjects className='nav-projects'>
                     <StyledNavLink to="project-1">
                         <li>site vitrine</li>
                     </StyledNavLink>
