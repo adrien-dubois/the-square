@@ -59,7 +59,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     html { 
-        scroll-behavior: unset;
+        scroll-behavior: smooth;
     }
 
     a,
@@ -72,7 +72,7 @@ const GlobalStyle = createGlobalStyle`
         height: 100vh;
         background: var(--bg-color);
         color: var(--black-color);
-        overflow: hidden;
+        overflow-x: hidden;
 
         @media screen and (max-width: 430px){
             position: relative;
