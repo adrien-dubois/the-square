@@ -2,17 +2,19 @@ import React from 'react';
 import Navigation from '../../component/Navigation/Navigation';
 import Logo from '../../subcomponent/Logo';
 import { 
-  Circle,
   Collective, 
   CTA, 
   HeroSection, 
   LeftBlock, 
   MainContent,
+  Square,
   SubText,
+  TeamSvg,
   Title,
   Topic
 } from './Collectif.elements';
-import { ArrowSvg } from '../../subcomponent/SvgComponent';
+import ArrowSvg from '../../assets/img/Arrow Right.svg';
+import Team from '../../assets/img/team.svg';
 
 const Collectif = () => {
   return (
@@ -23,14 +25,15 @@ const Collectif = () => {
         <MainContent>
           <LeftBlock>
             <Topic>
-              <Circle /> <span>Collectif Freelance</span>
+              <Square /> <span>The Square.</span>
             </Topic>
-            <Title>Transformez votre présence digitale</Title>
-            <SubText>Mollit et occaecat nulla occaecat velit velit aute commodo Tempor minim dolore esse ut duis ipsum proident sint magna occaecat Lorem.</SubText>
+            <Title>Qui sommes-nous?</Title>
+            <SubText>Mollit et occaecat nulla occaecat velit velit aute commodo Tempor minim dolore esse ut duis ipsum proident sint magna occaecat Lorem. Incididunt fugiat anim ea eiusmod veniam commodo sunt sunt incididunt culpa mollit aute sint ad. Sit et quis esse officia.</SubText>
             <CTA>
-              Prenez rendez-vous &nbsp; <ArrowSvg width="400" height="400" />
+              Prenez rendez-vous &nbsp; <img src={ArrowSvg} width="100" height="100" />
             </CTA>
           </LeftBlock>
+          <TeamSvg src={Team} alt="Team" width="400" height="400" />
         </MainContent>
       </HeroSection>
     </Collective>
