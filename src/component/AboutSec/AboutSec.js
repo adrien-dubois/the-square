@@ -37,9 +37,9 @@ const AboutSec = () => {
                         Fugiat aute elit laborum adipisicing qui id aliqua do est dolor. Enim laboris in tempor occaecat fugiat eiusmod. Pariatur exercitation minim quis id proident nisi duis ut minim. Ipsum irure ullamco sunt adipisicing nulla aliqua nostrud magna veniam mollit. Deserunt proident excepteur nostrud magna consectetur in quis sunt do. Pariatur ex aliqua incididunt qui adipisicing sit voluptate id.
                     </Text>
                     <div>
-                        <Circle />
-                        <Circle />
-                        <Circle />
+                        <Circle style={{ backgroundColor: "var(--teal-blue)" }} />
+                        <Circle style={{ backgroundColor: "var(--black-color)" }} />
+                        <Circle style={{ backgroundColor: "var(--black-color)" }} />
                     </div>
                 </AboutText>
             </Content>

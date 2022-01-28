@@ -1,9 +1,9 @@
 import styled, { keyframes } from "styled-components";
 
 export const move = keyframes`
-0% { transform:translateY(-5px); }
-50% { transform:translateY(10px); }
-100% { transform:translateY(-5px); }
+  0% { transform:translateY(-5px); }
+  50% { transform:translateY(10px); }
+  100% { transform:translateY(-5px); }
 `;
 
 export const HeroSection = styled.div`
