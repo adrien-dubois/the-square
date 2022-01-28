@@ -31,6 +31,7 @@ export const Collective = styled.div`
         line-height: 20px;
         transform: translateY(-100%);
         animation: navProject 1s ease forwards;
+        z-index: 5;
 
         @media screen and (max-width: 650px){
         left: 70%;

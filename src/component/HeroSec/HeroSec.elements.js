@@ -1,10 +1,5 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
-export const move = keyframes`
-  0% { transform:translateY(-5px); }
-  50% { transform:translateY(10px); }
-  100% { transform:translateY(-5px); }
-`;
 
 export const HeroSection = styled.div`
     width: 100vw;
@@ -116,7 +111,6 @@ export const TeamSvg = styled.img`
   max-width: 100%;
   width: calc(30% + 20vw);
   height: 60%;
-  animation: ${move} 2.5s ease infinite;
 
   @media only Screen and (max-width: 48em){
       align-self: flex-start;
