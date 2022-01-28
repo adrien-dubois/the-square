@@ -27,7 +27,7 @@ export const Background = styled.div`
     left: 0;
     bottom: 0;
     width: 100vw;
-    height: 85vh;
+    height: 100%;
     background-size: auto 100vh;
     z-index: -1;
 `;
@@ -64,4 +64,11 @@ export const Triangle = styled.span`
     border-left: 1.2rem solid transparent;
     border-right: 1.2rem solid transparent;
     border-top: 2rem solid var(--blanc-casse);
+`;
+
+export const Content = styled.div`
+    display: flex;
+    margin: 3rem 10rem;
+    align-items: center;
+    justify-content: space-between;
 `;

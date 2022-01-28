@@ -1,6 +1,7 @@
 import React from 'react';
 import { 
     Background, 
+    Content, 
     CurvedLine, 
     Line, 
     ScrollContainer, 
@@ -9,6 +10,8 @@ import {
     Triangle,
 } from './ServiceSec.elements';
 import { ScrollIcon } from '../../subcomponent/SvgComponent';
+import TextBlock from '../TextBlock/TextBlock';
+import SvgBlock from '../SvgBlock/SvgBlock';
 
 const ServiceSec = () => {
   return (
@@ -26,7 +29,30 @@ const ServiceSec = () => {
         </Background>
 
         <Content>
-            <TextBlock></TextBlock>
+            <TextBlock
+                topic="Sites Vitrines"
+                title="Un site vitrine selon vos besoins pour votre commerce"
+                subText="Id voluptate ex qui officia. Minim enim velit ad ullamco Lorem nisi aliquip do aliquip."
+            />
+            <SvgBlock svg="landing.svg"/>
+        </Content>
+
+        <Content>
+            <TextBlock
+                topic="Sites Vitrines"
+                title="Un site vitrine selon vos besoins pour votre commerce"
+                subText="Id voluptate ex qui officia. Minim enim velit ad ullamco Lorem nisi aliquip do aliquip."
+            />
+            <SvgBlock svg="landing.svg"/>
+        </Content>
+
+        <Content>
+            <TextBlock
+                topic="Sites Vitrines"
+                title="Un site vitrine selon vos besoins pour votre commerce"
+                subText="Id voluptate ex qui officia. Minim enim velit ad ullamco Lorem nisi aliquip do aliquip."
+            />
+            <SvgBlock svg="landing.svg"/>
         </Content>
 
     </ServiceSection>
