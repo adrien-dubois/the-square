@@ -7,17 +7,25 @@ import {
     Topic 
 } from './TextBlock.elements';
 
-const TextBlock = ({topic, title, subText, children}) => {
-return <LeftBlock>
+const TextBlock = ({
+    children,
+    topic, 
+    start,
+    subRight,
+    subText,
+    titleRight, 
+    title
+}) => {
+return (
+        
+        <LeftBlock start={start}>
             <Topic>
                 <Square /> <span>{topic}</span>
             </Topic>
-            <Title>{title}</Title>
-            <SubText>{subText}</SubText>
+            <Title titleRight={titleRight}>{title}</Title>
+            <SubText subRight={subRight}>{subText}</SubText>
             {children}
          </LeftBlock> 
-            
-  
-};
+)};
 
 export default TextBlock;

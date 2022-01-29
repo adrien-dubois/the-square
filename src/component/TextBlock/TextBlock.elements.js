@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const LeftBlock = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: ${({ start }) => (start ? 'flex-end' : 'flex-start')};
   width: 50%;
   line-height: 1.5;
   color: var(--blanc-casse);
@@ -35,12 +35,16 @@ export const Square = styled.span`
 `;
 
 export const Title = styled.h1`
+  text-align: ${({titleRight}) => (titleRight ? 'right' : 'left')} ;
   font-size: calc(2rem + 1vw);
   line-height: 1.2;
   padding: 0.5rem 0;
 `;
 
 export const SubText = styled.h5`
+  width: 90%;
+  text-align: ${({subRight}) => (subRight ? 'right' : 'left')};
   font-size: calc(0.5rem + 0.5vw);
   color: var(--teal-blue);
+  white-space: pre-wrap;
 `;

@@ -6,6 +6,7 @@ export const HeroSection = styled.div`
     height: 45vw;
     display: flex;
     justify-content: center;
+    position: relative;
     color: var(--blanc-casse);
 
     @media only Screen and (max-width: 48em){

@@ -18,11 +18,12 @@ export const AboutSection = styled.div`
 
 export const Waves = styled.img`
     width: 100%;
+    margin-top: -1%;
 `;
 
 export const Main = styled.div`
     margin: 0 15rem;
-    margin-top: 7rem;
+    margin-top: 12%;
     display: flex;
     justify-content: center;
     flex-direction: column;
