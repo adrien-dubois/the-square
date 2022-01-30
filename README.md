@@ -14,3 +14,5 @@ The landing page for our freelance collective project, named `THE SQUARE.`
 - EmailJs `3.4.0`
 - Framer Motion `6.2.3`
 - React Icons `4.3.1`
+- React Slick `0.28.1`
+- Slick Carousel `1.8.1`
