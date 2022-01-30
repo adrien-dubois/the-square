@@ -71,4 +71,14 @@ export const Content = styled.div`
     margin: 3rem 10rem;
     align-items: center;
     justify-content: space-between;
+
+    
+
+    @media only Screen and (max-width: 48em) {
+        display: block;
+        width: 75%;
+        &:last-child{
+            margin-bottom: 2rem;
+        }
+    }
 `;

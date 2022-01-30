@@ -42,7 +42,7 @@ const ServiceSec = () => {
         <Content>
             <SvgBlock svg="scrum.svg"/>
             <TextBlock
-                start
+                start="true"
                 titleRight
                 subRight
                 topic="No scrums"
@@ -54,11 +54,11 @@ const ServiceSec = () => {
 
         <Content>
             <TextBlock
-                topic="Sites Vitrines"
-                title="Un site vitrine selon vos besoins pour votre commerce"
-                subText="Id voluptate ex qui officia. Minim enim velit ad ullamco Lorem nisi aliquip do aliquip."
+                topic="Reunited"
+                title="Une équipe sur-mesure, de multiples compétences, un interlocuteur unique"
+                subText={`Nous avons un jour décidé d'assembler nos forces, car nous sommes partis du constat que nous avons des profils complémentaires, et qu'en formant une équipe de manière collaborative, proactive et efficace, nous pouvions former une équipe talentueuse pour répondre à des projets bien plus ambitieux. \nEt vous y trouvez aussi votre compte. En adoptant la méthode Agile nous travaillons comme une agence, avec la rapidité et le process d'une agence, mais avec les avantages des Freelance, sans avoir à en engager plusieurs.`}
             />
-            <SvgBlock svg="landing.svg"/>
+            <SvgBlock svg="meeting.svg"/>
         </Content>
 
     </ServiceSection>

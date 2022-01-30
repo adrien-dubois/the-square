@@ -39,6 +39,11 @@ export const Title = styled.h1`
   font-size: calc(2rem + 1vw);
   line-height: 1.2;
   padding: 0.5rem 0;
+
+  @media only Screen and (max-width: 48em) {
+    font-size: calc(1rem + 1vw);
+    text-align: center;
+  }
 `;
 
 export const SubText = styled.h5`
@@ -47,4 +52,8 @@ export const SubText = styled.h5`
   font-size: calc(0.5rem + 0.5vw);
   color: var(--teal-blue);
   white-space: pre-wrap;
+
+  @media only Screen and (max-width: 48em) {
+    text-align: center;
+  }
 `;

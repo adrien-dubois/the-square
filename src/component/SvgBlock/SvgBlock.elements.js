@@ -11,4 +11,8 @@ svg{
     width: 100%;
     height: auto;
 }
+
+@media only Screen and (max-width: 48em) {
+    display: none;
+}
 `;
