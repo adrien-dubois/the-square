@@ -30,4 +30,24 @@ export const Carousel = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    .slick-slider .slick-arrow:before{
+        color: var(--black-color);
+        font-size: 1.5rem;
+    }
+
+    .slick-slider .slick-dots button:before {
+        color: var(--black-color);
+        font-size: 1.5rem;
+    }
+
+    .slick-slide.slick-active{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 3rem;
+    }
 `;

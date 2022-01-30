@@ -30,6 +30,7 @@ const TeamSec = () => {
                     name="Gaëlle Ruf"
                     subtitle="Tech Lead"
                     image="gaelle"
+                    email="gaelle.ruf@gmail.com"
                 />
                 
                 <Cards
@@ -37,6 +38,7 @@ const TeamSec = () => {
                     name="Nathan Guyard"
                     subtitle="Responsable commercial"
                     image="nathan"
+                    email="nathan.arkanoxd12@gmail.com"
                 />
                 
                 <Cards
@@ -44,6 +46,7 @@ const TeamSec = () => {
                     name="Mehdi Mosteghami"
                     subtitle="Scrum Master"
                     image="mehdi"
+                    email="mosteghanemi.pro@gmail.com"
                 />
                 
                 <Cards
@@ -51,6 +54,7 @@ const TeamSec = () => {
                     name="Adrien Dubois"
                     subtitle="Développeur / Webdesigner"
                     image="adrien"
+                    email="adrien-dubois@white-umbrella.fr"
                 />
             </Slider>
         </Carousel>
@@ -59,3 +63,5 @@ const TeamSec = () => {
 };
 
 export default TeamSec;
+
+
