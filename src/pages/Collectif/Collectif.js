@@ -6,6 +6,7 @@ import Navigation from '../../component/Navigation/Navigation';
 import ServiceSec from '../../component/ServiceSec/ServiceSec';
 import TeamSec from '../../component/TeamSec/TeamSec';
 import Logo from '../../subcomponent/Logo';
+import ScrollToTop from '../../subcomponent/ScrollToTop';
 import { Collective } from './Collectif.elements';
 
 
@@ -19,6 +20,7 @@ const Collectif = () => {
       <ServiceSec />
       <TeamSec />
       <Footer />
+      <ScrollToTop />
     </Collective>
   );
 };
