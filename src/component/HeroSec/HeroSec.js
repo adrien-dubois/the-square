@@ -13,6 +13,7 @@ import {
 import ArrowSvg from '../../assets/img/Arrow Right.svg';
 import Team from '../../assets/img/team.svg';
 
+
 const HeroSec = () => {
   return (
     <HeroSection id="home">

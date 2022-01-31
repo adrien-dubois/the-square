@@ -18,7 +18,7 @@ const TextBlock = ({
 }) => {
 return (
         
-        <LeftBlock start={start}>
+        <LeftBlock id='leftBlock                                                  ' start={start}>
             <Topic>
                 <Square /> <span>{topic}</span>
             </Topic>

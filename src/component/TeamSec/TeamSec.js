@@ -19,7 +19,7 @@ const TeamSec = () => {
         slidesToScroll: 1
     };
   return (
-    <TeamSection>
+    <TeamSection id="team">
         <Title>Les membres</Title>
         <CurvedLine/>
         <Carousel>

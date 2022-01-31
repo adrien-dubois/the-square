@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { 
     Background, 
     Content, 
@@ -13,23 +15,154 @@ import { ScrollIcon } from '../../subcomponent/SvgComponent';
 import TextBlock from '../TextBlock/TextBlock';
 import SvgBlock from '../SvgBlock/SvgBlock';
 
-const ServiceSec = () => {
-    const br = `\n`;
+
+const Services = () => {
+    const ref = useRef(null);
+    const revealRefs = useRef([]);
+    revealRefs.current = [];
+    gsap.registerPlugin(ScrollTrigger);
+
+    const addToRefs = (el) => {
+        if(el && !revealRefs.current.includes(el) ) {
+          revealRefs.current.push(el);
+        }
+      };
+  
+    useEffect(() => {
+      const element = ref.current;
+      const line = document.getElementById("line")
+    //   const mq = window.matchMedia("(max-width: 48em)");
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger:document.getElementById("services"),
+  
+          start: "top top+=180",
+  
+          end: "bottom bottom",
+  
+          pin: element,
+          pinReparent: true,
+          markers: true,
+        },
+      });
+
+      tl.fromTo(
+        line,
+  
+        {
+          height: "15rem",
+        },
+        {
+          height: "3rem",
+          duration: 2,
+          scrollTrigger: {
+            trigger: line,
+            start: "top top+=200",
+            end: "bottom top+=220",
+            scrub: true,
+          },
+        }
+      );
+  
+      revealRefs.current.forEach((el, index) => {
+        // console.log(el.childNodes);
+        
+          tl.from(
+            el.childNodes[0],
+  
+            {
+              x: -300,
+              opacity: 0,
+              duration: 2,
+  
+              ease: "power2",
+              scrollTrigger: {
+                id: `section-${index + 1}`,
+                trigger: el,
+                start: "top center+=100",
+                end: "bottom bottom-=200",
+                scrub: true,
+                snap: true,
+                //
+                // toggleActions: "play none none reverse",
+              },
+            }
+          )
+            .to(el.childNodes[1], {
+              transform: "scale(0)",
+  
+              ease: "power2.inOut",
+  
+              scrollTrigger: {
+                id: `section-${index + 1}`,
+                trigger: el.childNodes[1],
+                start: "top center",
+                end: "bottom center",
+                scrub: true,
+                snap: true,
+  
+                // toggleActions: "play none none reverse",
+              },
+            })
+            .from(
+              el.childNodes[2],
+  
+              {
+                y: 400,
+  
+                duration: 2,
+  
+                ease: "power2",
+                scrollTrigger: {
+                  id: `section-${index + 1}`,
+                  trigger: el,
+                  start: "top center+=100",
+                  end: "bottom bottom-=200",
+                  scrub: true,
+                  snap: true,
+                  //
+                  // toggleActions: "play none none reverse",
+                },
+              }
+            )
+            .to(
+              el,
+  
+              {
+                opacity: 0,
+  
+                ease: "power2",
+                scrollTrigger: {
+                  id: `section-${index + 1}`,
+                  trigger: el,
+                  start: "top top+=200",
+                  end: "center top+=300",
+                  scrub: true,
+                },
+              }
+            );
+        
+      });
+    }, []);
+  
+    
+
   return (
-    <ServiceSection>
-        <Background>
+    <ServiceSection id="services">
+        <Background ref={ref}>
             <div>
-                <Title>Nos Services</Title>
+                <Title className="title">Nos Services</Title>
                 <CurvedLine/>
             </div>
             <ScrollContainer>
                 <ScrollIcon width={70} height={70} fill="var(--blanc-casse)" />
             </ScrollContainer>
-            <Line/>
-            <Triangle/>
+            <Line id="line" />
+            <Triangle id="triangle" />
         </Background>
 
-        <Content>
+        <Content ref={addToRefs}>
             <TextBlock
                 topic="Started from the Bottom"
                 title="Du site vitrine à l'E-Commerce, en passant par le Sur-Mesure"
@@ -37,9 +170,9 @@ const ServiceSec = () => {
                 
             />
             <SvgBlock svg="landing.svg"/>
-        </Content>
+        </Content >
 
-        <Content>
+        <Content ref={addToRefs}>
             <SvgBlock svg="scrum.svg"/>
             <TextBlock
                 start="true"
@@ -52,7 +185,7 @@ const ServiceSec = () => {
             
         </Content>
 
-        <Content>
+        <Content ref={addToRefs}>
             <TextBlock
                 topic="Reunited"
                 title="Une équipe sur-mesure, de multiples compétences, un interlocuteur unique"
@@ -65,4 +198,4 @@ const ServiceSec = () => {
  );
 };
 
-export default ServiceSec;
+export default Services;

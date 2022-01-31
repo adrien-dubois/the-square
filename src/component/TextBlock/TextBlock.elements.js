@@ -7,6 +7,7 @@ export const LeftBlock = styled.div`
   width: 50%;
   line-height: 1.5;
   color: var(--blanc-casse);
+  position: relative;
   @media only Screen and (max-width: 48em){
       width: 80%;
       text-align: center;

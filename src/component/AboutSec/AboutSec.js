@@ -28,7 +28,7 @@ const AboutSec = () => {
         slidesToScroll: 1
     };
   return (
-    <AboutSection>
+    <AboutSection id="about">
         <Waves src={wave} alt="waves" />
         <Main>
             <div>
