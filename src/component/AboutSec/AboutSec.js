@@ -1,10 +1,13 @@
 import React from 'react';
+import Slider from "react-slick";
+import "../../../node_modules/slick-carousel/slick/slick.css"
+import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import wave from "../../assets/img/wave.svg";
 import { 
     AboutSection, 
     AboutText, 
     Astronaut, 
-    Circle, 
+    Caroussel, 
     Content, 
     CurvedLine, 
     Main, 
@@ -17,6 +20,13 @@ import rocket from '../../assets/img/rocket.svg';
 import astronaut from '../../assets/img/astronaut.svg';
 
 const AboutSec = () => {
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    };
   return (
     <AboutSection>
         <Waves src={wave} alt="waves" />
@@ -33,14 +43,20 @@ const AboutSec = () => {
                     <Astronaut>
                     <img src={astronaut} alt='Astronaut' width='300' height='300' />
                     </Astronaut>
-                    <Text>
-                        Fugiat aute elit laborum adipisicing qui id aliqua do est dolor. Enim laboris in tempor occaecat fugiat eiusmod. Pariatur exercitation minim quis id proident nisi duis ut minim. Ipsum irure ullamco sunt adipisicing nulla aliqua nostrud magna veniam mollit. Deserunt proident excepteur nostrud magna consectetur in quis sunt do. Pariatur ex aliqua incididunt qui adipisicing sit voluptate id.
-                    </Text>
-                    <div>
-                        <Circle style={{ backgroundColor: "var(--teal-blue)" }} />
-                        <Circle style={{ backgroundColor: "var(--black-color)" }} />
-                        <Circle style={{ backgroundColor: "var(--black-color)" }} />
-                    </div>
+                    <Caroussel>
+                        <Slider {...settings}>
+                            <Text>
+                                Fugiat aute elit laborum adipisicing qui id aliqua do est dolor. Enim laboris in tempor occaecat fugiat eiusmod. Pariatur exercitation minim quis id proident nisi duis ut minim. Ipsum irure ullamco sunt adipisicing nulla aliqua nostrud magna veniam mollit. Deserunt proident excepteur nostrud magna consectetur in quis sunt do. Pariatur ex aliqua incididunt qui adipisicing sit voluptate id.
+                            </Text>
+                            <Text>
+                                Fugiat aute elit laborum adipisicing qui id aliqua do est dolor. Enim laboris in tempor occaecat fugiat eiusmod. Pariatur exercitation minim quis id proident nisi duis ut minim. Ipsum irure ullamco sunt adipisicing nulla aliqua nostrud magna veniam mollit. Deserunt proident excepteur nostrud magna consectetur in quis sunt do. Pariatur ex aliqua incididunt qui adipisicing sit voluptate id.
+                            </Text>
+                            <Text>
+                                Fugiat aute elit laborum adipisicing qui id aliqua do est dolor. Enim laboris in tempor occaecat fugiat eiusmod. Pariatur exercitation minim quis id proident nisi duis ut minim. Ipsum irure ullamco sunt adipisicing nulla aliqua nostrud magna veniam mollit. Deserunt proident excepteur nostrud magna consectetur in quis sunt do. Pariatur ex aliqua incididunt qui adipisicing sit voluptate id.
+                            </Text>
+                        </Slider>
+                    </Caroussel>
+                    
                 </AboutText>
             </Content>
         </Main>

@@ -12,7 +12,7 @@ export const TeamSection = styled.div`
 
 export const Title = styled.h1`
     display: inline-block;
-    font-size: 2rem;
+    font-size: calc(1rem + 1.5vw);
     margin-top: 1rem;
     position: relative;
 `;
@@ -31,9 +31,17 @@ export const Carousel = styled.div`
     flex-direction: column;
     justify-content: center;
 
+    @media only Screen and (max-width: 40em) {
+        width: 90vw;
+    }
+
     .slick-slider .slick-arrow:before{
         color: var(--black-color);
         font-size: 1.5rem;
+
+        @media only Screen and (max-width: 40em) {
+            display: none;
+        }
     }
 
     .slick-slider .slick-dots button:before {

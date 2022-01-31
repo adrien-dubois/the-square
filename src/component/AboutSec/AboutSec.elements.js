@@ -100,15 +100,32 @@ export const Astronaut = styled.div`
 export const Text = styled.h4`
     font-size: calc(0.5rem + 1vw);
     line-height: 1.5;
+    text-align: center;
     color: var(--black-color);
 `;
 
-export const Circle = styled.span`
-    display: inline-block;
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    background-color: var(--black-color);
-    margin-right: 0.5rem;
-    margin-top: 1rem;
+export const Caroussel = styled.div`
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .slick-slider .slick-arrow {
+        display: none;
+    }
+
+    .slick-slider .slick-dots button:before {
+        color: var(--teal-blue);
+        font-size: 1.5rem;
+    }
+
+    .slick-slide.slick-active{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 3rem;
+    }
 `;

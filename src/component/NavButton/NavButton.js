@@ -8,7 +8,7 @@ import {
 
 const NavButton = (props) => {
   return (
-    <NavButtonContainer>
+    <NavButtonContainer className='nav-button'>
         <NBMain>
             {props.left && (
                 <NBLink to={props.left} className="left hover">

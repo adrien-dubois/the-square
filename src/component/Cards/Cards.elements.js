@@ -25,10 +25,16 @@ export const CARD = styled.div`
         border-radius: 50%;
         background-size: 100% 150%;
         background-position: 0 -25px;
-
+        
         /* &:last-child{
             background-position: 0 -230px;
         } */
+    }
+
+    @media only Screen and (max-width: 450px){
+        box-shadow: none;
+        margin: 0 -2rem;
+        height: 570px; 
     }
  
 `;
@@ -73,7 +79,7 @@ export const Text = styled.h4`
     top: 15.7rem;
     color: var(--blue-gray);
     line-height: 1.75rem;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     text-align: center;
     margin: 0 .8rem;
 `;
@@ -90,5 +96,9 @@ export const ContactButton = styled.button`
     cursor: pointer;
     a{
         color: var(--blanc-casse);
+    }
+
+    @media only Screen and (max-width: 450px) {
+        bottom: 5rem;
     }
 `;

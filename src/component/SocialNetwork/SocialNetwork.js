@@ -32,7 +32,7 @@ const SocialNetwork = () => {
   return (
     <IconContext.Provider value={{ size:"25px" }}>
         <SocialNetContainer className='social-network'>
-            <Content>
+            <Content className='content'>
 
                 {/* GITHUB */}
                 <SLink href="https://github.com/adrien-dubois" target="_blank" rel='noopener noreferrer' className='hover' onMouseOver={anim} >

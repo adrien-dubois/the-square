@@ -1,5 +1,6 @@
 import React from 'react';
 import AboutSec from '../../component/AboutSec/AboutSec';
+import Footer from '../../component/Footer/Footer';
 import HeroSec from '../../component/HeroSec/HeroSec';
 import Navigation from '../../component/Navigation/Navigation';
 import ServiceSec from '../../component/ServiceSec/ServiceSec';
@@ -17,6 +18,7 @@ const Collectif = () => {
       <AboutSec />
       <ServiceSec />
       <TeamSec />
+      <Footer />
     </Collective>
   );
 };

@@ -64,4 +64,3 @@ const TeamSec = () => {
 
 export default TeamSec;
 
-
