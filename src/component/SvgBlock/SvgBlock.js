@@ -6,7 +6,7 @@ const SvgBlock = ({svg}) => {
     const SvgIcon = require(`../../assets/img/${svg}`);
     // console.log(SvgIcon);
   return (
-    <RightBlock>
+    <RightBlock id='svgBlock'>
        <img src={SvgIcon} alt="Services" />
     </RightBlock>
  );

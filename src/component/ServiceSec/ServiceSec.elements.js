@@ -6,15 +6,15 @@ export const move = keyframes`
   100% { transform:translateY(-5px); }
 `;
 
-export const ServiceSection = styled.div`
+export const ServiceSection = styled.section`
     width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 5rem;
-    padding-top: 20rem;
+    /* margin-top: 5rem; */
     position: relative;
+    padding-top: 20rem;
     color: var(--blanc-casse);
 `;
 
@@ -27,9 +27,10 @@ export const Background = styled.div`
     left: 0;
     bottom: 0;
     width: 100vw;
-    height: 100%;
+    height: 85vh;
     background-size: auto 100vh;
     z-index: -1;
+    background-repeat: no-repeat;
 `;
 
 export const Title = styled.h1`
@@ -68,17 +69,47 @@ export const Triangle = styled.span`
 
 export const Content = styled.div`
     display: flex;
-    margin: 3rem 10rem;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    margin: 10rem 10rem;
+    position: relative;
 
-    
+    @media only Screen and (max-width: 64em) {
+        margin: 10rem calc(4rem + 5vw);
+    }
 
     @media only Screen and (max-width: 48em) {
         display: block;
-        width: 75%;
-        &:last-child{
-            margin-bottom: 2rem;
+        &:last-child {
+        margin-bottom: 2rem;
         }
     }
+    @media only Screen and (max-width: 40em) {
+        margin: 10rem calc(2rem + 3vw);
+        &:last-child {
+        margin-bottom: 1rem;
+        }
+    }
+`;
+
+export const OBJ = styled.div`
+position: absolute;
+top: 80%;
+right: 35%;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 20vw;
+/* z-index: 1; */
+
+img {
+    visibility: hidden;
+}
+
+@media only Screen and (max-width: 48em) {
+  opacity: 0.5;
+}
+
+   
+
 `;

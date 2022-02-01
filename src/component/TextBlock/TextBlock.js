@@ -7,6 +7,8 @@ import {
     Topic 
 } from './TextBlock.elements';
 
+
+
 const TextBlock = ({
     children,
     topic, 
@@ -18,9 +20,10 @@ const TextBlock = ({
 }) => {
 return (
         
-        <LeftBlock id='leftBlock                                                  ' start={start}>
+        <LeftBlock id='leftBlock' start={start}>
             <Topic>
-                <Square /> <span>{topic}</span>
+                <Square /> 
+                <span>{topic}</span>
             </Topic>
             <Title titleRight={titleRight}>{title}</Title>
             <SubText subRight={subRight}>{subText}</SubText>

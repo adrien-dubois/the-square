@@ -1,11 +1,12 @@
-import React, { useEffect, useRef } from 'react';
 import gsap from "gsap";
+import { useEffect, useRef } from 'react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { 
     Background, 
     Content, 
     CurvedLine, 
     Line, 
+    OBJ, 
     ScrollContainer, 
     ServiceSection, 
     Title,
@@ -14,42 +15,43 @@ import {
 import { ScrollIcon } from '../../subcomponent/SvgComponent';
 import TextBlock from '../TextBlock/TextBlock';
 import SvgBlock from '../SvgBlock/SvgBlock';
+import caps from "../../assets/img/3dcapsule.png";
 
 
 const Services = () => {
     const ref = useRef(null);
+    gsap.registerPlugin(ScrollTrigger);
     const revealRefs = useRef([]);
     revealRefs.current = [];
-    gsap.registerPlugin(ScrollTrigger);
 
     const addToRefs = (el) => {
-        if(el && !revealRefs.current.includes(el) ) {
-          revealRefs.current.push(el);
-        }
-      };
+      if(el && !revealRefs.current.includes(el) ) {
+        revealRefs.current.push(el);
+      }
+    };
   
     useEffect(() => {
       const element = ref.current;
-      const line = document.getElementById("line")
+      
     //   const mq = window.matchMedia("(max-width: 48em)");
 
+    
+      // TIMELINE CREATE
+      const services = document.getElementById("services");
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger:document.getElementById("services"),
-  
+          trigger: services,
           start: "top top+=180",
-  
-          end: "bottom bottom",
-  
+          end: "bottom bottom+=180",
           pin: element,
-          pinReparent: true,
-          markers: true,
+          // pinReparent: true,
+          // markers: true,
         },
       });
 
-      tl.fromTo(
-        line,
-  
+      // ARROW ANIMATION
+      const line = document.getElementById("line")
+      tl.fromTo(line,
         {
           height: "15rem",
         },
@@ -68,15 +70,14 @@ const Services = () => {
       revealRefs.current.forEach((el, index) => {
         // console.log(el.childNodes);
         
-          tl.from(
-            el.childNodes[0],
+          tl.from(el.childNodes[0],
   
             {
               x: -300,
               opacity: 0,
               duration: 2,
-  
               ease: "power2",
+
               scrollTrigger: {
                 id: `section-${index + 1}`,
                 trigger: el,
@@ -84,19 +85,20 @@ const Services = () => {
                 end: "bottom bottom-=200",
                 scrub: true,
                 snap: true,
+                // markers:true
                 //
                 // toggleActions: "play none none reverse",
               },
-            }
-          )
+            })
+
             .to(el.childNodes[1], {
               transform: "scale(0)",
-  
+              duration: 2,
               ease: "power2.inOut",
   
               scrollTrigger: {
-                id: `section-${index + 1}`,
                 trigger: el.childNodes[1],
+                id: `section-${index + 1}`,
                 start: "top center",
                 end: "bottom center",
                 scrub: true,
@@ -105,18 +107,16 @@ const Services = () => {
                 // toggleActions: "play none none reverse",
               },
             })
-            .from(
-              el.childNodes[2],
+            .from(el.childNodes[2],
   
               {
                 y: 400,
-  
                 duration: 2,
-  
                 ease: "power2",
+
                 scrollTrigger: {
-                  id: `section-${index + 1}`,
                   trigger: el,
+                  id: `section-${index + 1}`,
                   start: "top center+=100",
                   end: "bottom bottom-=200",
                   scrub: true,
@@ -124,13 +124,12 @@ const Services = () => {
                   //
                   // toggleActions: "play none none reverse",
                 },
-              }
-            )
-            .to(
-              el,
+              })
+
+            .to(el,
   
               {
-                opacity: 0,
+                opacity: 1,
   
                 ease: "power2",
                 scrollTrigger: {
@@ -140,13 +139,10 @@ const Services = () => {
                   end: "center top+=300",
                   scrub: true,
                 },
-              }
-            );
+              });
         
       });
     }, []);
-  
-    
 
   return (
     <ServiceSection id="services">
@@ -159,38 +155,52 @@ const Services = () => {
                 <ScrollIcon width={70} height={70} fill="var(--blanc-casse)" />
             </ScrollContainer>
             <Line id="line" />
-            <Triangle id="triangle" />
+            <Triangle />
         </Background>
 
         <Content ref={addToRefs}>
             <TextBlock
                 topic="Started from the Bottom"
-                title="Du site vitrine à l'E-Commerce, en passant par le Sur-Mesure"
-                subText={'Nous sommes là pour vous accompagner et vous proposer un site répondant à toutes les normes actuelles en matière d’ergonomie, de design et technologie, comme le "responsive design" permettant à votre site de s’adapter à n’importe quelle résolution d’écran.\nNous prenons en charge intégralement votre site internet du dépôt du nom de domaine à la mise en ligne. Notre but est la création d’un site unique dont l’esthétique valorise votre image comme vos produits.'}
+                title={<h1>Du site vitrine à l'E-Commerce, en passant par le Sur-Mesure</h1>}
+                subText={
+                <h5>Nous sommes là pour vous accompagner et vous proposer un site répondant à toutes les normes actuelles en matière d’ergonomie, de design et technologie, comme le "responsive design" permettant à votre site de s’adapter à n’importe quelle résolution d’écran.<br/>
+                Nous prenons en charge intégralement votre site internet du dépôt du nom de domaine à la mise en ligne. Notre but est la création d’un site unique dont l’esthétique valorise votre image comme vos produits.</h5>}
                 
             />
+            <OBJ>
+              <img src={caps} alt='caps' width='400' height='400' />
+            </OBJ>
             <SvgBlock svg="landing.svg"/>
         </Content >
 
         <Content ref={addToRefs}>
             <SvgBlock svg="scrum.svg"/>
+            <OBJ>
+              <img src={caps} alt='caps' width='400' height='400' />
+            </OBJ>
             <TextBlock
                 start="true"
                 titleRight
                 subRight
                 topic="No scrums"
-                title="Une méthodologie vous plaçant au coeur de votre projet"
-                subText={`Notre collectif utilise la méthode Agile: SCRUM.\n C'est une pratique qui mets en avant la collaboration entre notre équipe et le client, centrée sur l'humain et la communication, ce qui apporte une approche plus pragmatique, qui encourage une flexibilité au changement en cours de projet afin de s'adapter à votre vision. Vous devenez vous aussi acteur du développement de votre propre site web, et nous sommes sûr d'être au plus proche de vos désirs.`}
+                title={<h1>Une méthodologie vous plaçant au coeur de votre projet</h1>}
+                subText={
+                <h5>Notre collectif utilise la méthode Agile: SCRUM.\n C'est une pratique qui mets en avant la collaboration entre notre équipe et le client, centrée sur l'humain et la communication, ce qui apporte une approche plus pragmatique, qui encourage une flexibilité au changement en cours de projet afin de s'adapter à votre vision. Vous devenez vous aussi acteur du développement de votre propre site web, et nous sommes sûr d'être au plus proche de vos désirs.</h5>}
             />
             
         </Content>
 
-        <Content ref={addToRefs}>
+        <Content>
             <TextBlock
                 topic="Reunited"
-                title="Une équipe sur-mesure, de multiples compétences, un interlocuteur unique"
-                subText={`Nous avons un jour décidé d'assembler nos forces, car nous sommes partis du constat que nous avons des profils complémentaires, et qu'en formant une équipe de manière collaborative, proactive et efficace, nous pouvions former une équipe talentueuse pour répondre à des projets bien plus ambitieux. \nEt vous y trouvez aussi votre compte. En adoptant la méthode Agile nous travaillons comme une agence, avec la rapidité et le process d'une agence, mais avec les avantages des Freelance, sans avoir à en engager plusieurs.`}
+                title={<h1>Une équipe sur-mesure, de multiples compétences, un interlocuteur unique</h1>}
+                subText={
+                <h5>Nous avons un jour décidé d'assembler nos forces, car nous sommes partis du constat que nous avons des profils complémentaires, et qu'en formant une équipe de manière collaborative, proactive et efficace, nous pouvions former une équipe talentueuse pour répondre à des projets bien plus ambitieux. <br/> 
+                Et vous y trouvez aussi votre compte. En adoptant la méthode Agile nous travaillons comme une agence, avec la rapidité et le process d'une agence, mais avec les avantages des Freelance, sans avoir à en engager plusieurs.</h5>}
             />
+            <OBJ>
+              <img src={caps} alt='caps' width='400' height='400' />
+            </OBJ>
             <SvgBlock svg="meeting.svg"/>
         </Content>
 

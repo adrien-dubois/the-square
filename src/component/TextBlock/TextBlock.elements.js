@@ -8,15 +8,16 @@ export const LeftBlock = styled.div`
   line-height: 1.5;
   color: var(--blanc-casse);
   position: relative;
+  /* z-index: 1; */
   @media only Screen and (max-width: 48em){
-      width: 80%;
+      width: 100%;
       text-align: center;
       align-items: center;
 
   }
 `;
 
-export const Topic = styled.div`
+export const Topic = styled.span`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,26 +36,26 @@ export const Square = styled.span`
   margin-right: 0.5rem;
 `;
 
-export const Title = styled.h1`
+export const Title = styled.div`
   text-align: ${({titleRight}) => (titleRight ? 'right' : 'left')} ;
-  font-size: calc(2rem + 1vw);
+  font-size: 2rem;
   line-height: 1.2;
   padding: 0.5rem 0;
 
   @media only Screen and (max-width: 48em) {
-    font-size: calc(1rem + 1vw);
+    font-size: calc(1rem + 1.5vw);
     text-align: center;
   }
 `;
 
-export const SubText = styled.h5`
+export const SubText = styled.div`
   width: 90%;
   text-align: ${({subRight}) => (subRight ? 'right' : 'left')};
-  font-size: calc(0.5rem + 0.5vw);
+  font-size: 1.3rem;
   color: var(--teal-blue);
   white-space: pre-wrap;
 
   @media only Screen and (max-width: 48em) {
-    text-align: center;
+    font-size: calc(0.5rem + 1vw);
   }
 `;
