@@ -26,6 +26,10 @@ export const Topic = styled.span`
   font-size: calc(0.4rem + 0.4vw);
   padding: 0.5rem 1rem;
   border-radius: 20px;
+
+  @media only Screen and (max-width: 48em) {
+    font-size: calc(0.4rem + 0.8vw);
+  }
 `;
 
 export const Square = styled.span`
@@ -37,8 +41,8 @@ export const Square = styled.span`
 `;
 
 export const Title = styled.div`
+  font-size: calc(1rem + 1vw);
   text-align: ${({titleRight}) => (titleRight ? 'right' : 'left')} ;
-  font-size: 2rem;
   line-height: 1.2;
   padding: 0.5rem 0;
 
@@ -49,9 +53,9 @@ export const Title = styled.div`
 `;
 
 export const SubText = styled.div`
-  width: 90%;
+  /* width: 90%; */
   text-align: ${({subRight}) => (subRight ? 'right' : 'left')};
-  font-size: 1.3rem;
+  font-size: calc(0.5rem + 0.5vw);
   color: var(--teal-blue);
   white-space: pre-wrap;
 

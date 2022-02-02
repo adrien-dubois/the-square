@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle } from "styled-components";
 import KronaOne from "./assets/fonts/KronaOne-Regular.ttf";
-import Michroma from "./assets/fonts/Michroma-Regular.ttf";
+// import Michroma from "./assets/fonts/Michroma-Regular.ttf";
 import Montserrat from "./assets/fonts/Montserrat-VariableFont_wght.ttf";
 import Questrial from "./assets/fonts/Questrial-Regular.ttf";
 
@@ -70,9 +70,9 @@ const GlobalStyle = createGlobalStyle`
     body {
         font-family: var(--font-1);
         height: 100vh;
-        background: var(--bg-color);
         color: var(--black-color);
         overflow-x: hidden;
+        background: var(--bg-color);
 
         @media screen and (max-width: 430px){
             position: relative;
@@ -83,6 +83,7 @@ const GlobalStyle = createGlobalStyle`
 
     main{
         position: relative;
+        
     }
 
 `;

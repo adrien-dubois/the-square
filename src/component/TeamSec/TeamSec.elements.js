@@ -33,6 +33,9 @@ export const Carousel = styled.div`
 
     @media only Screen and (max-width: 40em) {
         width: 90vw;
+        .slick-slider .slick-arrow {
+            display: none;
+        }
     }
 
     .slick-slider .slick-arrow:before{

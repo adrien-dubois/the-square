@@ -19,13 +19,13 @@ const Navigation = () => {
 
             <NavPortfolio>portfolio
                 <NavProjects className='nav-projects'>
-                    <StyledNavLink to="project-1">
+                    <StyledNavLink to="/project-1">
                         <li>site vitrine</li>
                     </StyledNavLink>
-                    <StyledNavLink to="project-2">
+                    <StyledNavLink to="/project-2">
                         <li>foodtruck</li>
                     </StyledNavLink>
-                    <StyledNavLink to="project-3">
+                    <StyledNavLink to="/project-3">
                         <li>e-commerce</li>
                     </StyledNavLink>
                 </NavProjects>

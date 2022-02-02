@@ -28,8 +28,9 @@ export const Background = styled.div`
     bottom: 0;
     width: 100vw;
     height: 85vh;
-    background-size: auto 100vh;
     z-index: -1;
+    /* background-color: black; */
+    background-size: auto 100vh;
     background-repeat: no-repeat;
 `;
 
@@ -38,14 +39,19 @@ export const Title = styled.h1`
     font-size: 2rem;
     margin-top: 1rem;
     position: relative;
-`;
 
-export const CurvedLine = styled.div`
-    width: 8rem;
-    height: 2rem;
-    border: 5px solid var(--teal-blue);
-    border-color: var(--teal-blue) transparent transparent transparent;
-    border-radius: 150%/60px 70px 0 0;
+    &::before{
+        content:'';
+        width: 8rem;
+        height: 2rem;
+        position: absolute;
+        left: 50%;
+        bottom: -110%;
+        transform: translate(-50%, 0.5rem);
+        border: 5px solid var(--teal-blue);
+        border-color: var(--teal-blue) transparent transparent transparent;
+        border-radius: 150%/60px 70px 0 0;
+    }
 `;
 
 export const ScrollContainer = styled.div`

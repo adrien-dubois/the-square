@@ -5,7 +5,7 @@ export const FooterContainer = styled.footer`
     font-size: 1rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
     @media only Screen and (max-width: 48em) {
         flex-direction: column;

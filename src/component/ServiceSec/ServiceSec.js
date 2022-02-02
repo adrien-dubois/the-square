@@ -1,50 +1,42 @@
 import gsap from "gsap";
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { 
     Background, 
     Content, 
-    CurvedLine, 
     Line, 
     OBJ, 
-    ScrollContainer, 
     ServiceSection, 
     Title,
     Triangle,
-} from './ServiceSec.elements';
-import { ScrollIcon } from '../../subcomponent/SvgComponent';
+} from '../TeamSec/ServiceSec.elements';
 import TextBlock from '../TextBlock/TextBlock';
 import SvgBlock from '../SvgBlock/SvgBlock';
 import caps from "../../assets/img/3dcapsule.png";
 
 
 const Services = () => {
-    const ref = useRef(null);
-    gsap.registerPlugin(ScrollTrigger);
-    const revealRefs = useRef([]);
-    revealRefs.current = [];
+  const ref = useRef(null);
+  gsap.registerPlugin(ScrollTrigger);
+  const revealRefs = useRef([]);
+  revealRefs.current = [];
 
-    const addToRefs = (el) => {
-      if(el && !revealRefs.current.includes(el) ) {
-        revealRefs.current.push(el);
-      }
-    };
+   
   
     useEffect(() => {
       const element = ref.current;
-      
-    //   const mq = window.matchMedia("(max-width: 48em)");
+      ////
+      // const mq = window.matchMedia("(max-width: 48em)");
 
     
       // TIMELINE CREATE
-      const services = document.getElementById("services");
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: services,
-          start: "top top+=180",
-          end: "bottom bottom+=180",
+          trigger: document.getElementById("services"),
+          start: "top top+=100",
+          end: "bottom bottom",
           pin: element,
-          // pinReparent: true,
+          pinReparent: true,
           // markers: true,
         },
       });
@@ -82,7 +74,7 @@ const Services = () => {
                 id: `section-${index + 1}`,
                 trigger: el,
                 start: "top center+=100",
-                end: "bottom bottom-=200",
+                end: "bottom bottom-=300",
                 scrub: true,
                 snap: true,
                 // markers:true
@@ -129,7 +121,7 @@ const Services = () => {
             .to(el,
   
               {
-                opacity: 1,
+                opacity: 0,
   
                 ease: "power2",
                 scrollTrigger: {
@@ -140,22 +132,22 @@ const Services = () => {
                   scrub: true,
                 },
               });
-        
+            
       });
     }, []);
+
+    const addToRefs = (el) => {
+      if(el && !revealRefs.current.includes(el) ) {
+        revealRefs.current.push(el);
+      }
+    };
 
   return (
     <ServiceSection id="services">
         <Background ref={ref}>
-            <div>
-                <Title className="title">Nos Services</Title>
-                <CurvedLine/>
-            </div>
-            <ScrollContainer>
-                <ScrollIcon width={70} height={70} fill="var(--blanc-casse)" />
-            </ScrollContainer>
+            <Title className="title">Nos Services</Title>
             <Line id="line" />
-            <Triangle />
+            <Triangle id="triangle" />
         </Background>
 
         <Content ref={addToRefs}>

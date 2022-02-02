@@ -6,7 +6,7 @@ export const move = keyframes`
   100% { transform:translateY(-5px); }
 `;
 
-export const AboutSection = styled.div`
+export const AboutSection = styled.section`
     background: var(--blanc-casse);
     width: 100vw;
     position: relative;
@@ -23,7 +23,7 @@ export const Waves = styled.img`
 
 export const Main = styled.div`
     margin: 0 15rem;
-    margin-top: 12%;
+    margin-top: 15rem;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -87,7 +87,7 @@ export const AboutText = styled.div`
 
 export const Astronaut = styled.div`
     width: 50%;
-    margin-bottom: 3rem;
+    /* margin-bottom: 3rem; */
     position: absolute;
     right: 0;
     bottom: 100%;

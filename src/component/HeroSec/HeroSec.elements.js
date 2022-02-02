@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-export const HeroSection = styled.div`
+export const HeroSection = styled.section`
     width: 100vw;
     height: 45vw;
     display: flex;

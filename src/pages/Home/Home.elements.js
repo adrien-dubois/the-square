@@ -5,6 +5,7 @@ export const HomeContainer = styled.div`
     width: 100vw;
     position: absolute;
     overflow: hidden;
+    
 
     &:after {
         content: '';
