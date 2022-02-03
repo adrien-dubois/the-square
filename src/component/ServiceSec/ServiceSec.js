@@ -9,7 +9,7 @@ import {
     ServiceSection, 
     Title,
     Triangle,
-} from '../TeamSec/ServiceSec.elements';
+} from './ServiceSec.elements';
 import TextBlock from '../TextBlock/TextBlock';
 import SvgBlock from '../SvgBlock/SvgBlock';
 import caps from "../../assets/img/3dcapsule.png";
@@ -20,17 +20,16 @@ const Services = () => {
   gsap.registerPlugin(ScrollTrigger);
   const revealRefs = useRef([]);
   revealRefs.current = [];
-
-   
   
     useEffect(() => {
       const element = ref.current;
       ////
-      // const mq = window.matchMedia("(max-width: 48em)");
+      const mq = window.matchMedia("(max-width: 48em)");
 
     
       // TIMELINE CREATE
       const tl = gsap.timeline({
+        paused: true,
         scrollTrigger: {
           trigger: document.getElementById("services"),
           start: "top top+=100",
@@ -61,7 +60,82 @@ const Services = () => {
   
       revealRefs.current.forEach((el, index) => {
         // console.log(el.childNodes);
-        
+        if (mq.matches) {
+          tl.from(
+            el.childNodes[0],
+      
+            {
+              x: -300,
+              opacity: 0,
+              duration: 2,
+      
+              ease: "power2",
+              scrollTrigger: {
+                id: `section-${index + 1}`,
+                trigger: el,
+                start: "top center+=200",
+                end: "bottom bottom-=100",
+                scrub: true,
+                snap: true,
+                //
+                // toggleActions: "play none none reverse",
+              },
+            }
+          )
+            .to(el.childNodes[1], {
+              transform: "scale(0)",
+      
+              ease: "power2.inOut",
+      
+              scrollTrigger: {
+                id: `section-${index + 1}`,
+                trigger: el.childNodes[1],
+                start: "top center",
+                end: "bottom center",
+                scrub: true,
+                snap: true,
+      
+                // toggleActions: "play none none reverse",
+              },
+            })
+            .from(
+              el.childNodes[2],
+      
+              {
+                y: 400,
+      
+                duration: 2,
+      
+                ease: "power2",
+                scrollTrigger: {
+                  id: `section-${index + 1}`,
+                  trigger: el,
+                  start: "top center+=100",
+                  end: "bottom bottom-=200",
+                  scrub: true,
+                  snap: true,
+                  //
+                  // toggleActions: "play none none reverse",
+                },
+              }
+            )
+            .to(
+              el,
+      
+              {
+                opacity: 0,
+      
+                ease: "power2",
+                scrollTrigger: {
+                  id: `section-${index + 1}`,
+                  trigger: el,
+                  start: "top top+=300",
+                  end: "center top+=300",
+                  scrub: true,
+                },
+              }
+            );
+        } else {
           tl.from(el.childNodes[0],
   
             {
@@ -132,8 +206,14 @@ const Services = () => {
                   scrub: true,
                 },
               });
-            
+        }  
       });
+
+      return () => {
+        tl.kill();
+        ref.kill(); 
+        revealRefs.kill(); 
+      };
     }, []);
 
     const addToRefs = (el) => {
@@ -141,6 +221,7 @@ const Services = () => {
         revealRefs.current.push(el);
       }
     };
+    
 
   return (
     <ServiceSection id="services">
