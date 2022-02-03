@@ -1,6 +1,6 @@
 import gsap from "gsap";
-import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
 import { 
     Background, 
     Content, 
@@ -20,16 +20,19 @@ const Services = () => {
   gsap.registerPlugin(ScrollTrigger);
   const revealRefs = useRef([]);
   revealRefs.current = [];
-  
+
+  const addToRefs = (el) => {
+    if(el && !revealRefs.current.includes(el) ) {
+      revealRefs.current.push(el);
+    }
+  };
     useEffect(() => {
       const element = ref.current;
-      ////
       const mq = window.matchMedia("(max-width: 48em)");
 
     
       // TIMELINE CREATE
       const tl = gsap.timeline({
-        paused: true,
         scrollTrigger: {
           trigger: document.getElementById("services"),
           start: "top top+=100",
@@ -206,26 +209,18 @@ const Services = () => {
                   scrub: true,
                 },
               });
-        }  
+        }
+         
       });
+      
 
       setTimeout(() => {
         ScrollTrigger.refresh();
         console.log("scrolltrigger refresh!");
       }, 1000);
 
-      return () => {
-        tl.kill();
-        ref.kill(); 
-        revealRefs.kill(); 
-      };
     }, []);
 
-    const addToRefs = (el) => {
-      if(el && !revealRefs.current.includes(el) ) {
-        revealRefs.current.push(el);
-      }
-    };
     
 
   return (

@@ -20,7 +20,7 @@ export const NavigationContainer = styled.div`
     left: -178px;
     z-index: -1;    
 
-        @media screen and (max-width: 430px){
+        @media only Screen and (max-width: 430px){
             height: 50px;
             width: 50px;
         }
@@ -33,7 +33,6 @@ export const NavigationContainer = styled.div`
     }
     
 `;
-
 
 export const StyledNavLink = styled(NavLink)`
 

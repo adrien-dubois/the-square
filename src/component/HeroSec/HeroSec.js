@@ -15,6 +15,7 @@ import Team from '../../assets/img/team.svg';
 
 
 const HeroSec = () => {
+  
   return (
     <HeroSection id="home">
         <MainContent>

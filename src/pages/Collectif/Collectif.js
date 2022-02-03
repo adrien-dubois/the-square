@@ -1,3 +1,4 @@
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import React from 'react';
 import AboutSec from '../../component/AboutSec/AboutSec';
 import Footer from '../../component/Footer/Footer';
@@ -10,7 +11,11 @@ import ScrollToTop from '../../subcomponent/ScrollToTop';
 import { Collective } from './Collectif.elements';
 
 
-const Collectif = () => {
+const Collectif = () => {  
+        let triggers = ScrollTrigger.getAll();
+      triggers.forEach( trigger => {			
+        trigger.kill();
+      })
   return (
     <Collective>
       <Navigation />

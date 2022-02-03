@@ -13,23 +13,31 @@ export const TeamSection = styled.div`
 export const Title = styled.h1`
     display: inline-block;
     font-size: calc(1rem + 1.5vw);
-    margin-top: 1rem;
+    margin: 1rem 0 2rem 0;
     position: relative;
+    z-index: 1;
+
+    &::before{
+        content:'';
+        width: 8rem;
+        height: 2rem;
+        position: absolute;
+        left: 50%;
+        bottom: -110%;
+        transform: translate(-50%, 0.5rem);
+        border: 5px solid var(--teal-blue);
+        border-color: var(--teal-blue) transparent transparent transparent;
+        border-radius: 150%/60px 70px 0 0;
+    }
 `;
 
-export const CurvedLine = styled.div`
-    width: 8rem;
-    height: 2rem;
-    border: 5px solid var(--teal-blue);
-    border-color: var(--teal-blue) transparent transparent transparent;
-    border-radius: 150%/60px 70px 0 0;
-`;
 
 export const Carousel = styled.div`
     width: 50vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    z-index: 5;
 
     @media only Screen and (max-width: 40em) {
         width: 90vw;

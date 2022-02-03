@@ -4,7 +4,6 @@ import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import { 
     Carousel,
-    CurvedLine,
     TeamSection, 
     Title 
 } from './TeamSec.elements';
@@ -21,7 +20,6 @@ const TeamSec = () => {
   return (
     <TeamSection id="team">
         <Title>Les membres</Title>
-        <CurvedLine/>
         <Carousel>
             <Slider {...settings}>
                 
@@ -30,7 +28,7 @@ const TeamSec = () => {
                     name="Gaëlle Ruf"
                     subtitle="Tech Lead"
                     image="gaelle"
-                    email="gaelle.ruf@gmail.com"
+                    email="gaelle@the-square.net"
                 />
                 
                 <Cards
@@ -38,7 +36,7 @@ const TeamSec = () => {
                     name="Nathan Guyard"
                     subtitle="Responsable commercial"
                     image="nathan"
-                    email="nathan.arkanoxd12@gmail.com"
+                    email="nathan@the-square.net"
                 />
                 
                 <Cards
@@ -46,7 +44,7 @@ const TeamSec = () => {
                     name="Mehdi Mosteghami"
                     subtitle="Scrum Master"
                     image="mehdi"
-                    email="mosteghanemi.pro@gmail.com"
+                    email="mehdi@the-square.net"
                 />
                 
                 <Cards
@@ -54,7 +52,7 @@ const TeamSec = () => {
                     name="Adrien Dubois"
                     subtitle="Développeur / Webdesigner"
                     image="adrien"
-                    email="adrien-dubois@white-umbrella.fr"
+                    email="adrien@the-square.net"
                 />
             </Slider>
         </Carousel>

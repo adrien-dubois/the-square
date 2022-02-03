@@ -1,4 +1,12 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+export const navProject = keyframes`
+  to {transform: translateY(0);}
+`;
+
+export const logoProject = keyframes`
+  to {transform: scale(1);}
+`;
 
 export const Collective = styled.div`
   position: relative;
@@ -15,12 +23,12 @@ export const Collective = styled.div`
     left: -80px;
     z-index: -1;
 
-    @media screen and (max-width: 810px){
+    @media only Screen and (max-width: 810px){
       height: 200px;
       width: 200px;
       bottom: -110px;
     }
-    @media screen and (max-width: 430px){
+    @media only Screen and (max-width: 430px){
       left : -500px;
     }
   }
@@ -30,19 +38,18 @@ export const Collective = styled.div`
         font-size: 1.1rem;
         line-height: 20px;
         transform: translateY(-100%);
-        animation: navProject 1s ease forwards;
+        animation: ${navProject} 1s ease forwards ;
         z-index: 5;
-
-        @media screen and (max-width: 650px){
-        left: 70%;
-        }
-    
-        @keyframes navProject {to {transform: translateY(0);}}
 
         &:before {
             left: -62px;
             top: -167px;
         }
+
+        @media only Screen and (max-width: 650px){
+          left: 70%;
+        }
+        
         .nav-projects {
         transform: translateX(67px);
         padding: 0 20px;
@@ -53,13 +60,7 @@ export const Collective = styled.div`
         left: 50%;
         transform: translateX(-50%);
         transform: scale(0);
-        animation: logoProject 2s ease forwards;
-    
-        @keyframes logoProject {
-        to {
-            transform: scale(1);
-        }
-        }
-    }
+        animation: ${logoProject} 2s ease forwards;
+      }
 `;
 
