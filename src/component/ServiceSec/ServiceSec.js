@@ -209,6 +209,11 @@ const Services = () => {
         }  
       });
 
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+        console.log("scrolltrigger refresh!");
+      }, 1000);
+
       return () => {
         tl.kill();
         ref.kill(); 
@@ -225,12 +230,14 @@ const Services = () => {
 
   return (
     <ServiceSection id="services">
+      <div>
         <Background ref={ref}>
             <Title className="title">Nos Services</Title>
             <Line id="line" />
             <Triangle id="triangle" />
         </Background>
-
+      </div>
+           
         <Content ref={addToRefs}>
             <TextBlock
                 topic="Started from the Bottom"
@@ -246,6 +253,7 @@ const Services = () => {
             <SvgBlock svg="landing.svg"/>
         </Content >
 
+        
         <Content ref={addToRefs}>
             <SvgBlock svg="scrum.svg"/>
             <OBJ>
@@ -263,6 +271,7 @@ const Services = () => {
             
         </Content>
 
+        
         <Content>
             <TextBlock
                 topic="Reunited"

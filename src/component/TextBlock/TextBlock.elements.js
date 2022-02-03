@@ -41,7 +41,7 @@ export const Square = styled.span`
 `;
 
 export const Title = styled.div`
-  font-size: calc(1rem + 1vw);
+  font-size: calc(0.8rem + 0.8vw);
   text-align: ${({titleRight}) => (titleRight ? 'right' : 'left')} ;
   line-height: 1.2;
   padding: 0.5rem 0;
@@ -53,9 +53,9 @@ export const Title = styled.div`
 `;
 
 export const SubText = styled.div`
-  /* width: 90%; */
+  width: 90%;
   text-align: ${({subRight}) => (subRight ? 'right' : 'left')};
-  font-size: calc(0.5rem + 0.5vw);
+  font-size: calc(0.6rem + 0.6vw);
   color: var(--teal-blue);
   white-space: pre-wrap;
 
