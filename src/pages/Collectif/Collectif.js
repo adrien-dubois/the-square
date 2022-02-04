@@ -12,10 +12,6 @@ import { Collective } from './Collectif.elements';
 
 
 const Collectif = () => {  
-        let triggers = ScrollTrigger.getAll();
-      triggers.forEach( trigger => {			
-        trigger.kill();
-      })
   return (
     <Collective>
       <Navigation />
