@@ -40,3 +40,14 @@ export const ImgTxt = styled.p`
 
 `;
 
+export const ButtonContainer = styled.div`
+
+`;
+
+export const ButtonLink = styled.a`
+
+`;
+
+export const ButtonSpan = styled.span`
+
+`;

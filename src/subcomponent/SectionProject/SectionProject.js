@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { projectsData } from '../../datas/projectDatas';
 import { 
+  ButtonContainer,
+  ButtonLink,
+  ButtonSpan,
   ImgSpan,
   ImgTitle,
   ImgTxt,
@@ -42,10 +45,16 @@ const SectionProject = (props) => {
             </ImgSpan>
             <img src={project.img} alt={project.title} />
           </div>
+
+          <ButtonContainer>
+            <ButtonLink href={project.link} target='_blank' rel='noopener noreferer'>
+              <ButtonSpan>Voir le site</ButtonSpan>
+            </ButtonLink>
+          </ButtonContainer>
       </ProjectImg>
 
     </ProjectMain>
-    
+
   );
 };
 

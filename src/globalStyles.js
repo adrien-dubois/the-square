@@ -40,6 +40,7 @@ const GlobalStyle = createGlobalStyle`
         --blue-gray: #607D8B; 
         --gris-fonce: #393E46;
         --bg-color: #393E46;
+        --navBgColor: rgb(37 38 41);
     }
 
     * {
