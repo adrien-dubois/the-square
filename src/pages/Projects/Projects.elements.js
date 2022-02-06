@@ -1,4 +1,12 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+export const navProject = keyframes`
+  to {transform: translateY(0);}
+`;
+
+export const logoProject = keyframes`
+  to {transform: scale(1);}
+`;
 
 export const NavProjects = styled.nav`
     position: fixed;
@@ -110,7 +118,40 @@ export const Marker = styled.div`
 
 
 export const ProjectsContainer = styled.div`
-    position: absolute;
+    position: relative;
+    overflow: clip visible;
+
+    .navigation{
+        position: sticky;
+        bottom: 25%;
+        left: 92%;
+        font-size: 1.1rem;
+        line-height: 20px;
+        transform: translateY(-100%);
+        animation: ${navProject} 1s ease forwards ;
+        z-index: 5;
+
+        &:before {
+            left: -62px;
+            bottom: -167px;
+        }
+
+        @media only Screen and (max-width: 650px){
+          left: 70%;
+        }
+        
+        .nav-projects {
+        transform: translateX(67px);
+        padding: 0 20px;
+        }
+    }
+    .logo {
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        transform: scale(0);
+        animation: ${logoProject} 2s ease forwards;
+      }
 `;
 
 export const SectionPart = styled.main`

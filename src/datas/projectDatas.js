@@ -9,7 +9,7 @@ export const projectsData = [
         languages: ["React", "Styled Components"],
         infos: "Laboris ad enim ea aliqua qui sunt veniam do occaecat. Consectetur incididunt occaecat aliqua non mollit consectetur nisi nisi cupidatat. ",
         lightInfos: true,
-        img: "./assets/img/projet-1.jpg",
+        img: "./assets/img/projet-3.jpg",
         link: "https://the-square.net",
     },
     {
@@ -34,7 +34,7 @@ export const projectsData = [
         darkSquare: true,
         languages: ["HTML", "CSS", "PHP"],
         infos: "Consequat eu dolore et aute et Lorem ad. Amet laborum pariatur velit qui nisi tempor commodo Lorem tempor aliquip ipsum proident non excepteur. Cillum duis aute culpa non aute irure nulla do nostrud commodo cillum eiusmod ea. Est mollit ipsum culpa officia id ipsum cillum. Fugiat reprehenderit esse ullamco do aliqua. Amet ipsum Lorem fugiat nulla quis minim cillum adipisicing in mollit magna adipisicing.",
-        img: "./assets/img/projet-1.jpg",
+        img: "./assets/img/projet-2.jpg",
         lightInfos: true,
         link: "https://the-square.net",
     },

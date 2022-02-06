@@ -12,6 +12,9 @@ import {
   TimelineLink
 } from './Projects.elements';
 import SectionProject from '../../subcomponent/SectionProject/SectionProject';
+import FooterProject from './FooterProjects';
+import Navigation from '../../component/Navigation/Navigation';
+import Logo from '../../subcomponent/Logo';
 
 export default class Projects extends Component {
   componentDidMount(){
@@ -158,6 +161,8 @@ export default class Projects extends Component {
   render() {
     return (
       <ProjectsContainer>
+        <Navigation/>
+        <Logo/>
         <NavProjects>
           
           {/* position on the timeline */}
@@ -201,6 +206,8 @@ export default class Projects extends Component {
         </ProjectSection>
 
       </SectionPart>
+
+      <FooterProject/>
     </ProjectsContainer>
     );
   }
