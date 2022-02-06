@@ -186,6 +186,7 @@ export const ImgTitle = styled.h3`
 
 export const ImgTxt = styled.p`
     color: ${({lightInfos}) => (lightInfos ? 'var(--blanc-casse)' : 'var(--black-color)')} ;
+    font-size: calc(0.5rem + 0.5vw);
 `;
 
 export const ButtonContainer = styled.div`

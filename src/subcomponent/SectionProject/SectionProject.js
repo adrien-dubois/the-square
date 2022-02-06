@@ -37,7 +37,7 @@ const SectionProject = (props) => {
 
       {/* IMAGE */}
       <ProjectImg>
-          <div className="img-container hover">
+          <div className="img-container hover section__image">
             <ImgSpan>
               <ImgTitle>{project.title}</ImgTitle>
               <ImgTxt lightInfos={project.lightInfos} >{project.infos}</ImgTxt>

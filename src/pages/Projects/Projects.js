@@ -18,7 +18,8 @@ export default class Projects extends Component {
 
     // register plugins
     gsap.registerPlugin(ScrollTrigger, Draggable);
-  
+
+    const sections = gsap.utils.toArray('section');
     // Get the track marker & the links
     const track = document.querySelector('[data-draggable]');
     const navLinks = gsap.utils.toArray('[data-link]');
@@ -35,7 +36,16 @@ export default class Projects extends Component {
       return ((track.offsetWidth / 2) - lastItemWidth());
     }
 
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    const updatePosition = () => {
+      const left = track.getBoundingClientRect().left * -1;
+      const width = getDraggableWidth();
+      const useableHeight = getUseableHeight();
+      const y = gsap.utils.mapRange(0, width, 0, useableHeight, left);
+    
+      st.scroll(y);
+    }
      
     // now calculate x value in interpolation
     const tl = gsap.timeline()
@@ -53,6 +63,7 @@ export default class Projects extends Component {
     // Now we’ll create a Draggable instance
     const draggableInstance = Draggable.create(track, {
       type: 'x',
+      inertia: true,
 
       // set the bounds, otherwise the element could be dragged right off the screen
       bounds: {
@@ -62,20 +73,74 @@ export default class Projects extends Component {
       edgeResistance: 1,
       onDragStart: () => st.disable(),
       onDragEnd: () => st.enable(),
-      onDrag: () => {
-        const left = track.getBoundingClientRect().left * -1
-        const width = getDraggableWidth()
-        const useableHeight = getUseableHeight()
-        const y = gsap.utils.mapRange(0, width, 0, useableHeight, left)
-        
-        st.scroll(y);
-      }
+      onDrag: updatePosition,
+      onThrowUpdate: updatePosition
     })
 
     const initSectionAnimation = () => {
       // Do nothing if user prefers reduced motion 
       if (prefersReducedMotion.matches) return ;
+
+      sections.forEach((section, index) => {
+        const heading = section.querySelector('.section__heading')
+        const image = section.querySelector('.section__image')
+
+        // set animation start state
+        gsap.set(heading, {
+          opacity: 0,
+          y: 50
+        })
+        gsap.set(image, {
+          opacity: 0,
+          rotateY: 15
+        })
+
+        // Timeline section
+        const sectionTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            start: () => 'top center',
+            end: () => `+=${window.innerHeight}`,
+            toggleActions: 'play reverse play reverse'
+          }
+        })
+
+        // Adding tween to timeline
+        sectionTl.to(image, {
+          opacity: 1,
+          rotateY: -5,
+          duration: 6,
+          ease: 'elastic'
+        })
+        .to(heading, {
+          opacity: 1,
+          y: 0,
+          duration: 2
+        }, 0.5)
+
+        // Adding a new timeline to add an active class to the nav link for the current section
+        const sectionTl2 = gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 20px',
+            end: () => `bottom top`,
+            toggleActions: 'play none play reverse',
+            onToggle: ({ isActive }) => {
+              const sectionLink = navLinks[index]
+              
+              if (isActive) {
+                sectionLink.classList.add('is-active')
+              } else {
+                sectionLink.classList.remove('is-active')
+              }
+            }
+          }
+        })
+
+      })
     }
+
+    initSectionAnimation();
 
     // Allow navigation via keyboard 
     track.addEventListener('keyup', (e) => {
@@ -128,11 +193,11 @@ export default class Projects extends Component {
         </ProjectSection>
 
         <ProjectSection className='section' id="section_3" style={{'--i': 2}} >
-
+          <SectionProject projectNumber={2} />
         </ProjectSection>
 
         <ProjectSection className='section' id="section_4" style={{'--i': 3}} >
-
+          <SectionProject projectNumber={3} />
         </ProjectSection>
 
       </SectionPart>

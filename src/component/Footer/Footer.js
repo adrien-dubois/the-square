@@ -13,7 +13,7 @@ const Footer = () => {
         <LeftText>
             ©2022 made with ❤ <span>by The Square.</span>
         </LeftText>
-        <NavButton left={"/"} right={"/project-1"} />
+        <NavButton left={"/"} right={"/portfolio"} />
         <RightText>
             Suivez nous sur nos réseaux
             <SocialNetwork/>
