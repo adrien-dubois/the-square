@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { projectsData } from '../../datas/projectDatas';
 import { 
   ButtonContainer,
-  ButtonLink,
   ButtonSpan,
   ImgSpan,
   ImgTitle,
@@ -23,15 +22,15 @@ const SectionProject = (props) => {
 
   return (
 
-    <ProjectMain>
+    <ProjectMain className='container'>
 
       {/* CONTENT */}
-      <ProjectContent>
+      <ProjectContent className='section__heading'>
         <ProjectTitle>{project.title} </ProjectTitle>
-        <ProjectText>{project.date} </ProjectText>
+        <ProjectText darkSquare={project.darkSquare} darkDate={project.darkDate} >{project.date} </ProjectText>
         <ProjectLanguages>
           {project.languages.map((item) => {
-            return <ProjectLi key={item}>{item}</ProjectLi>
+            return <ProjectLi darkLang={project.darkLang} key={item}>{item}</ProjectLi>
           })} 
         </ProjectLanguages>
       </ProjectContent>
@@ -41,15 +40,15 @@ const SectionProject = (props) => {
           <div className="img-container hover">
             <ImgSpan>
               <ImgTitle>{project.title}</ImgTitle>
-              <ImgTxt>{project.infos}</ImgTxt>
+              <ImgTxt lightInfos={project.lightInfos} >{project.infos}</ImgTxt>
             </ImgSpan>
             <img src={project.img} alt={project.title} />
           </div>
 
           <ButtonContainer>
-            <ButtonLink href={project.link} target='_blank' rel='noopener noreferer'>
+            <a href={project.link} target='_blank' rel='noopener noreferer'>
               <ButtonSpan>Voir le site</ButtonSpan>
-            </ButtonLink>
+            </a>
           </ButtonContainer>
       </ProjectImg>
 

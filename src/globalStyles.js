@@ -38,7 +38,7 @@ const GlobalStyle = createGlobalStyle`
         --teal-blue: #00ADB5;
         --blanc-casse: #EEEEEE;
         --blue-gray: #607D8B; 
-        --gris-fonce: #393E46;
+        --bg-second: #484f58;
         --bg-color: #393E46;
         --navBgColor: rgb(37 38 41);
     }
@@ -59,8 +59,12 @@ const GlobalStyle = createGlobalStyle`
         }
     }
 
-    html { 
-        scroll-behavior: smooth;
+    html {
+        overscroll-behavior: contain;
+        
+        @media (prefers-reduced-motion: no-preference) {
+            scroll-behavior: smooth;
+        }
     }
 
     a,

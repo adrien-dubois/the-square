@@ -110,20 +110,24 @@ export const Marker = styled.div`
 
 
 export const ProjectsContainer = styled.div`
-
+    position: absolute;
 `;
 
 export const SectionPart = styled.main`
-
+    
 `;
 
 export const ProjectSection = styled.section`
-    --h: calc(var(--i) * 30);
-	
-	min-height: 100vh;
-	padding: 8rem 0 max(5vh, 2rem);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: hsl(var(--h, 217) 10% 25%);
+
+    height: 100vh;
+    width: 100vw;
+    padding: 8rem 0 max(5vh, 2rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	background-color: var(--bg-color);
+
+    &:nth-child(2n+0){
+        background-color: var(--blanc-casse);
+    }
 `;
