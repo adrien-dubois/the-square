@@ -11,7 +11,7 @@ export const NavigationContainer = styled.div`
     
     position: fixed;
     top: 1rem;
-    left: 1.4rem;
+    left: .5rem;
     font-size: 1.4rem;
     line-height: 28px;
     color: var(--teal-blue);
@@ -24,8 +24,12 @@ export const NavigationContainer = styled.div`
     border-radius: 50%;
     background: var(--blanc-casse);
     top: -124px;
-    left: -178px;
-    z-index: -1;    
+    left: -160px;
+    z-index: -1;  
+    
+    ul {
+        margin-left: -1rem;
+    }
 
         @media only Screen and (max-width: 430px){
             height: 50px;
