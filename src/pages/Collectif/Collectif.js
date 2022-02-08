@@ -1,4 +1,3 @@
-import ScrollTrigger from 'gsap/ScrollTrigger';
 import React from 'react';
 import AboutSec from '../../component/AboutSec/AboutSec';
 import Footer from '../../component/Footer/Footer';

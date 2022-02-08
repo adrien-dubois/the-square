@@ -1,8 +1,15 @@
 import { NavLink } from "react-router-dom";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+export const move = keyframes`
+  0% { transform:translateY(-3px); }
+  50% { transform:translateY(6px); }
+  100% { transform:translateY(-3px); }
+`;
 
 export const NavigationContainer = styled.div`
-    position: absolute;
+    
+    position: fixed;
     top: 1rem;
     left: 1.4rem;
     font-size: 1.4rem;
@@ -30,6 +37,13 @@ export const NavigationContainer = styled.div`
     }
     ul:hover li:hover {
         color: var(--color-2);
+    }
+
+    &:hover{
+        #wrapper{
+            visibility: hidden;
+            opacity: 0;
+        }
     }
     
 `;
@@ -74,3 +88,23 @@ export const NavPortfolio = styled.li`
     }
 `;
 
+export const SubNav = styled.p`
+    color: var(--teal-blue);
+    position: absolute;
+    left: 70%;
+    bottom: -50%;
+`;
+
+export const ArrowUp = styled.div`
+    position: absolute;
+    bottom: 0;
+    bottom: -27%;
+    left: 90%;
+    animation: ${move} 2.5s ease infinite;
+`;
+
+export const MenuWrapper = styled.div`
+    visibility: visible;
+    opacity: 1;
+    transition: visibility .7s, opacity .7s linear;
+`;

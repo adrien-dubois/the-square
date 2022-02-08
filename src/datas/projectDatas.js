@@ -7,7 +7,7 @@ export const projectsData = [
         date: "janvier 22",
         darkSquare: true,
         languages: ["React", "Styled Components"],
-        infos: "Laboris ad enim ea aliqua qui sunt veniam do occaecat. Consectetur incididunt occaecat aliqua non mollit consectetur nisi nisi cupidatat. ",
+        infos: "Laboris ad enim ea aliqua qui sunt veniam do occaecat. Consectetur incididunt occaecat aliqua non mollit consectetur nisi nisi cupidatat. Nulla laboris in dolor ut sint ullamco laborum nulla anim voluptate veniam. Ex deserunt ipsum ut veniam culpa reprehenderit enim officia Lorem culpa commodo mollit minim cillum. Ipsum laboris magna velit aute excepteur mollit aliquip veniam sunt minim ullamco.",
         lightInfos: true,
         img: "./assets/img/projet-3.jpg",
         link: "https://the-square.net",

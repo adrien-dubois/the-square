@@ -1,4 +1,4 @@
-import gsap from 'gsap';
+import gsap, { Power1, TimelineMax } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import Draggable from 'gsap/Draggable';
 import lodashThrottle from "https://cdn.skypack.dev/lodash.throttle@4.1.1";
@@ -22,6 +22,7 @@ export default class Projects extends Component {
     // register plugins
     gsap.registerPlugin(ScrollTrigger, Draggable);
 
+    const navBar = document.getElementById('navigate');
     const sections = gsap.utils.toArray('section');
     // Get the track marker & the links
     const track = document.querySelector('[data-draggable]');
@@ -62,6 +63,8 @@ export default class Projects extends Component {
       animation: tl,
       scrub: 0,
     })
+
+    
     
     // Now we’ll create a Draggable instance
     const draggableInstance = Draggable.create(track, {
@@ -159,6 +162,7 @@ export default class Projects extends Component {
   }
   
   render() {
+
     return (
       <ProjectsContainer>
         <Navigation/>
@@ -189,19 +193,19 @@ export default class Projects extends Component {
 
       <SectionPart>
 
-        <ProjectSection className='section' id="section_1" style={{'--i': 0}} >
+        <ProjectSection className='section' id="section_1" >
           <SectionProject projectNumber={0} />
         </ProjectSection>
 
-        <ProjectSection className='section' id="section_2" style={{'--i': 1}} >
+        <ProjectSection className='section' id="section_2" >
           <SectionProject projectNumber={1} />
         </ProjectSection>
 
-        <ProjectSection className='section' id="section_3" style={{'--i': 2}} >
+        <ProjectSection className='section' id="section_3" >
           <SectionProject projectNumber={2} />
         </ProjectSection>
 
-        <ProjectSection className='section' id="section_4" style={{'--i': 3}} >
+        <ProjectSection className='section' id="section_4" >
           <SectionProject projectNumber={3} />
         </ProjectSection>
 

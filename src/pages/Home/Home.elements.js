@@ -30,6 +30,10 @@ export const HomeContainer = styled.div`
         display: none;
         }
     }
+
+    #wrapper{
+        display: none;
+    }
 `;
 
 export const HomeMain = styled.div`

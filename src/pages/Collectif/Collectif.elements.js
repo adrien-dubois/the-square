@@ -1,9 +1,5 @@
 import styled, { keyframes } from "styled-components";
 
-export const navProject = keyframes`
-  to {transform: translateY(0);}
-`;
-
 export const logoProject = keyframes`
   to {transform: scale(1);}
 `;
@@ -38,7 +34,7 @@ export const Collective = styled.div`
         font-size: 1.1rem;
         line-height: 20px;
         transform: translateY(-100%);
-        animation: ${navProject} 1s ease forwards ;
+
         z-index: 5;
 
         &:before {
@@ -51,8 +47,8 @@ export const Collective = styled.div`
         }
         
         .nav-projects {
-        transform: translateX(67px);
-        padding: 0 20px;
+        transform: translateX(65px);
+        padding: 0 18px;
         }
     }
     .logo {
