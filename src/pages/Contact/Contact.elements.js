@@ -9,6 +9,7 @@ export const ContactContainer = styled.div`
       position: relative;
       width: 80%;
       margin: 0 auto;
+      right: 15%;
 
       @media screen and (max-width: 740px){
         width: 50%;
@@ -121,6 +122,7 @@ export const ContactInfos = styled.div`
 
 export const Adress = styled.div`
     position: relative;
+    right: 5%;
 
     @media screen and (max-width: 540px){
     display: none;

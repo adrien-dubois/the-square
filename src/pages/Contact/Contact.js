@@ -42,7 +42,7 @@ const Contact = () => {
                     alert("Numéro de téléphone copié!");
                   }}
                 >
-                  +336 653 544 81
+                  (+33)6 65 35 44 81
                 </p>
               </CopyToClipboard>
             </Content>

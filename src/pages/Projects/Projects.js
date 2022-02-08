@@ -1,7 +1,6 @@
-import gsap, { Power1, TimelineMax } from 'gsap';
+import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import Draggable from 'gsap/Draggable';
-import lodashThrottle from "https://cdn.skypack.dev/lodash.throttle@4.1.1";
 import React, { Component } from 'react';
 import { 
   Marker,
@@ -14,7 +13,6 @@ import {
 import SectionProject from '../../subcomponent/SectionProject/SectionProject';
 import FooterProject from './FooterProjects';
 import Navigation from '../../component/Navigation/Navigation';
-import Logo from '../../subcomponent/Logo';
 
 export default class Projects extends Component {
   componentDidMount(){
