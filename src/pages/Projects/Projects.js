@@ -166,7 +166,6 @@ export default class Projects extends Component {
     return (
       <ProjectsContainer>
         <Navigation/>
-        <Logo/>
         <NavProjects>
           
           {/* position on the timeline */}

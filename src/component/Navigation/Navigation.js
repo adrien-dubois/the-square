@@ -1,4 +1,4 @@
-import gsap, { Power1, TimelineMax } from 'gsap';
+import { Power1, TimelineMax } from 'gsap';
 import React, { Component } from 'react';
 import {FaArrowUp} from 'react-icons/fa';
 import { 
